@@ -80,10 +80,15 @@ body {
 #slajder {
   margin-top:10rem;
   height:50vh;
-  overflow:hidden;
+  overflow: hidden;
+  padding:-10px;
 }
 
-#slajder>div {
+#slajderPudelko {
+  margin-top:-0vh;
+}
+
+#slajderPudelko>div {
   float:left;
   border:2px solid blue;
   width:100%;
@@ -91,13 +96,13 @@ body {
   position: relative;
 }
 
-#slajder>div>img {
+#slajderPudelko>div>img {
   width:100%;
   height:100%;
   object-fit: cover;
 }
 
-#slajder>div>a {
+#slajderPudelko>div>a {
   position:absolute;
 }
 

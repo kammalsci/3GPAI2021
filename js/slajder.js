@@ -44,11 +44,35 @@ function generujSlajd(tlo, przycisk, tekst, link) {
     wynikowyKodHTML+="</div>";
     return wynikowyKodHTML;
 }
+var tablicaPrzyciskow=[];
+var tablicaTekstow=[];
+var tablicaSlajdow=[];
+var numerSlajdu=0;
 
-var nowyPrzycisk = new PrzyciskNaSlajder("70%","30%","#DD3333", "Naciśnij", "http://www.wp.pl");
-var nowyTekst = new TekstNaSlajder("10%","80%","2rem","#DD3333", "Super tekst linku", "http://www.wp.pl");
 
-var slajder=document.getElementById("slajder");
+tablicaPrzyciskow.push(new PrzyciskNaSlajder("80%", "30%", "lightblue", "Darmowe kotki", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.whiskas.pl%2Fporadnik%2Fzachowanie%2Fnaturalne-instynkty-twojego-kotka&psig=AOvVaw3Ra4uTCt1iZYEGCh5Z4aGZ&ust=1637917964013000&source=images&cd=vfe&ved=0CAkQjhxqFwoTCNj1h4WWs_QCFQAAAAAdAAAAABAG"));
+tablicaTekstow.push(new TekstNaSlajder("20%", "10%", "2rem", "lightblue", "Darmowe kotki", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.whiskas.pl%2Fporadnik%2Fzachowanie%2Fnaturalne-instynkty-twojego-kotka&psig=AOvVaw3Ra4uTCt1iZYEGCh5Z4aGZ&ust=1637917964013000&source=images&cd=vfe&ved=0CAkQjhxqFwoTCNj1h4WWs_QCFQAAAAAdAAAAABAG"));
+tablicaSlajdow.push(generujSlajd("https://s3-eu-west-1.amazonaws.com/w3.cdn.gpd/pl.whiskas.267/large_naturalne-instynkty-twojego-kotka-637154514761628123.jpg", tablicaPrzyciskow[numerSlajdu], tablicaTekstow[numerSlajdu], "https://google.com"));
+numerSlajdu++;
 
-slajder.innerHTML+=generujSlajd("img/slajder/s1.jpg", nowyPrzycisk, nowyTekst, "http://www.google.pl");
-slajder.innerHTML+=generujSlajd("1.jpg", nowyPrzycisk, nowyTekst, "http://www.google.pl");
+tablicaPrzyciskow.push(new PrzyciskNaSlajder("80%", "30%", "lightblue", "Darmowe kotki", "https://i.kym-cdn.com/entries/icons/original/000/022/134/elmo.jpg"));
+tablicaTekstow.push(new TekstNaSlajder("20%", "10%", "2rem", "lightblue", "Darmowe kotki", "https://i.kym-cdn.com/entries/icons/original/000/022/134/elmo.jpg"));
+tablicaSlajdow.push(generujSlajd("https://i.kym-cdn.com/entries/icons/original/000/022/134/elmo.jpg", tablicaPrzyciskow[numerSlajdu], tablicaTekstow[numerSlajdu], "https://google.com"));
+numerSlajdu++;
+
+tablicaPrzyciskow.push(new PrzyciskNaSlajder("70%","30%","#DD3333", "Naciśnij", "http://www.wp.pl"));
+tablicaTekstow.push(new TekstNaSlajder("10%","80%","2rem","#DD3333", "Super tekst linku", "http://www.wp.pl"));
+tablicaSlajdow.push(generujSlajd("img/slajder/s1.jpg", tablicaPrzyciskow[numerSlajdu], tablicaTekstow[numerSlajdu], "http://www.google.pl"))
+numerSlajdu++;
+
+generujSlajderZeSlajdow();
+
+
+function generujSlajderZeSlajdow() {
+    var slajder=document.getElementById("slajderPudelko");
+    for (var i=0; i<tablicaSlajdow.length; i++) {
+        slajder.innerHTML+=tablicaSlajdow[i];
+    }
+
+}
+

@@ -1,53 +1,97 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Sklep z rzeczami</title>
-        <link rel="Stylesheet" href="styl.css">
-        
-    </head>
-    <body>
-        <section id="naglowek">
-            <!--logo, wyszukiwarka, menu-->
-            <div id="infoODostawie">
-                <p>Darmowa dostawa i zwrot</p>
-            </div>
-            <div id="logoIPrzyciski">
-                <div id="logo">
-                    <img src="img/logo/logoheader.png" alt="Logo sklepu StoreName">
-                    <span>Store Name</span>
-                </div>
-                <div id="ikonkiNaroznik">
-                    <img src="img/ikonki.png" alt="Profil" id="ikonkiNaroznikProfil">
-                    <img src="img/ikonki.png" alt="Koszyk" id="ikonkiNaroznikKoszyk">
-                </div>
-            </div>
-        </section>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Sklep z rzeczami</title>
+		<link rel="Stylesheet" href="styl.css" />
+		<link rel="Stylesheet" href="css/brands.css" />
+	</head>
+	<body>
+		<section id="naglowek">
+			<!--logo, wyszukiwarka, menu-->
+			<div id="infoODostawie">
+				<p>Darmowa dostawa i zwrot</p>
+			</div>
+			<div id="logoIPrzyciski">
+				<div id="logo">
+					<img src="img/logo/logoheader.png" alt="Logo sklepu StoreName" />
+					<span>Store Name</span>
+				</div>
+				<div id="ikonkiNaroznik">
+					<img src="img/ikonki.png" alt="Profil" id="ikonkiNaroznikProfil" />
+					<img src="img/ikonki.png" alt="Koszyk" id="ikonkiNaroznikKoszyk" />
+				</div>
+			</div>
+			<div id="menuGlowne">
+				<ul>
+					<li><a href="mezczyzni.html">Mężczyźni</a></li>
+					<li>Kobiety</li>
+					<li>Dzieci</li>
+					<li>Akcesoria</li>
+					<li>Wyprzedaż</li>
+				</ul>
+				<form method="GET">
+					<input type="submit" id="szukaj" value="" />
+					<input type="text" id="wyszukiwarka" placeholder="wyszukaj..." name="szukaj" />
+				</form>
+			</div>
+		</section>
 
-        <section id="slajder">
-            <div id="slajderPudelko">
-                <!--sjalder-->
-            </div>
-            
-        </section>
-        <script src="js/slajder.js"></script>
+		<section id="slajder">
+			<button id="sliderLewo">&LeftAngleBracket;</button>
+			<button id="sliderPrawo">&RightAngleBracket;</button>
+			<div id="sliderKropki"></div>
+			<div id="slajderPudelko">
+				<!--sjalder-->
+			</div>
+		</section>
+		<script src="js/slajder.js"></script>
 
-        <section id="tresc">
-            <div id="fleksboks">
-                <ul>
-                    <li>cośtam 1</li>
-                    <li>cośtam jeden</li>
-                    <li>cośtam uno</li>
-                    <li>cośtam one</li>
-                    <li>cośtam pierwszy</li>
-                    <li>cośtam I</li>
-                    <li>cośtam 2</li>
-                </ul>
+		<section id="tresc">
+			<h1>Odkryj najnowsze kolekcje</h1>
+			<div>
+				<div>Element 1</div>
+				<div>Element 2</div>
+				<div>Element 3</div>
+				<div>Element 4</div>
+			</div>
+		</section>
 
-            </div>
-        </section>
-
-        <section id="stopka">
-            <!-- sołsial midia i kopirajtsy, dane adresowe, polityka prywatności, itd -->
-        </section>
-    </body>
+		<section id="stopka">
+			<!-- sołsial midia i kopirajtsy, dane adresowe, polityka prywatności, itd -->
+			<div>
+				<a class="uwaga" href="polityka-prywatności.html">Polityka prywatności</a>
+				|
+				<a class="uwaga" href="dane-adresowe.html">Dane adresowe</a>
+				<script src="js/uwaga.js"></script>
+			</div>
+			<div>
+				<a href="http://facebook.com/storename">
+					<svg alt="facebook" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+						<path
+							d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+						/>
+					</svg>
+				</a>
+				<a href="http://twitter.com/storename">
+					<svg alt="twitter" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+						<path
+							d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+						/>
+					</svg>
+				</a>
+				<a href="https://www.youtube.com/watch?v=FXt6D2fwzmI">
+					<svg alt="youtube" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+						<path
+							d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+						/>
+					</svg>
+				</a>
+			</div>
+			<div id="rok">
+				StoreName &copy;&nbsp;
+				<!-- rok jest pobierany w rok.js -->
+				<script src="js/rok.js"></script>
+			</div>
+		</section>
+	</body>
 </html>

@@ -1,110 +1,277 @@
 body {
-  margin:0;
-  padding:0;
-  font-family:sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	overflow: hidden;
 }
 
 * {
-  box-sizing: border-box;
-  margin:0;
-  padding:0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 #naglowek {
-  position:fixed;
-  background:rgb(255,255,255);
-  box-shadow:0 0 3rem rgba(0,0,0,0.6); 
-  width:100vw;
-  height:8rem; 
-  top:0;
-  /*overflow:hidden;*/
-  display:flex;
-  flex-direction: column;
+	position: sticky;
+	background: rgb(255, 255, 255);
+	box-shadow: 0 0 3rem rgba(0, 0, 0, 0.6);
+	width: 100vw;
+	height: 8rem;
+	top: 0;
+	z-index: 1000;
+	/* overflow: hidden; */
+	display: flex;
+	flex-direction: column;
 }
 
 #infoODostawie {
-  height:3rem;
-  text-align:center;
+	height: 3rem;
+	text-align: center;
 }
 
 #logoIPrzyciski {
-  height:3rem;
-
+	height: 3rem;
+	display: flex;
+	justify-content: space-between;
 }
 
 #logo {
-  display:flex;
-  align-items:center;
-  width:calc( 100vw - 10rem );
+	display: flex;
+	align-items: center;
+	margin-left: 10rem;
+	width: calc(100vw - 20rem);
+	justify-content: center;
 }
 
 #logo img {
-  height:2rem;
+	height: 2rem;
 }
 
 #ikonkiNaroznik {
-  width:10rem;
+	width: 10rem;
+	display: flex;
+	align-items: center;
 }
 
 #ikonkiNaroznik img {
-  width: 2rem;
-  height:2rem;
-  object-fit:cover;
+	width: 2rem;
+	height: 2rem;
+	object-fit: cover;
 }
 
 #ikonkiNaroznikProfil {
-  object-position:102% 0;
- 
+	object-position: 102% 0;
 }
 
 #ikonkiNaroznikKoszyk {
-  object-position:53% 0px;
+	object-position: 53% 0px;
 }
 
-#fleksboks {
-  margin-top:10rem;
-  background:rgb(250,250,150);
+#menuGlowne {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
-#fleksboks ul {
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
+#menuGlowne ul {
+	display: flex;
+	justify-content: space-between;
+	list-style-type: none;
 }
 
-#fleksboks li {
-  margin:0;
-  padding:0;
+#menuGlowne li {
+	margin: 0;
+	padding: 1rem;
+}
+
+#menuGlowne li:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+#menuGlowne a {
+	color: black;
+	text-decoration: none;
+}
+
+#menuGlowne form {
+	background-color: rgba(0, 0, 0, 0.1);
+	align-items: center;
+	display: flex;
+	padding: 0.1rem 0.3rem;
+}
+
+#wyszukiwarka {
+	border: none;
+}
+
+#szukaj {
+	background-image: url('img/szukaj.png');
+	background-size: 1.5rem 1.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	border: none;
+}
+
+@media screen and (max-width: 1000px) {
+	#menuGlowne {
+		flex-direction: column;
+	}
+
+	#menuGlowne form {
+		width: 100vw;
+		padding: 0 10vw;
+	}
+
+	#wyszukiwarka {
+		margin-left: 10px;
+		display: flex;
+		flex: 1;
+		padding: 0 2vw;
+	}
 }
 
 #slajder {
-  margin-top:10rem;
-  height:50vh;
-  overflow: hidden;
-  padding:-10px;
+	position: relative;
+	margin-top: 2rem;
+	height: 50vh;
+	/* overflow: hidden; */
+	--slide: 0;
 }
 
 #slajderPudelko {
-  margin-top:-0vh;
+	display: flex;
+	height: 100%;
+	transition: transform 0.5s;
+	--przesuniecie: calc(-100% * var(--slide));
+	transform: translateX(var(--przesuniecie));
 }
 
-#slajderPudelko>div {
-  float:left;
-  border:2px solid blue;
-  width:100%;
-  height:100%;
-  position: relative;
+#slajder #sliderKropki {
+	position: absolute;
+	bottom: 1rem;
+	left: 50%;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
 }
 
-#slajderPudelko>div>img {
-  width:100%;
-  height:100%;
-  object-fit: cover;
+.kropka {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: 0 0.5rem;
+	cursor: pointer;
 }
 
-#slajderPudelko>div>a {
-  position:absolute;
+#slajder #sliderLewo {
+	position: absolute;
+	left: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
 }
 
+#slajder #sliderPrawo {
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+}
 
+#slajderPudelko > div {
+	width: 100%;
+	flex-shrink: 0;
+	float: left;
+	border: 2px solid blue;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
 
+#slajderPudelko > div > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#slajderPudelko > div > a {
+	position: absolute;
+}
+
+#tresc {
+	margin-left: 8vw;
+	margin-right: 8vw;
+	margin-top: 3vh;
+	text-align: center;
+}
+
+#tresc div {
+	display: flex;
+	justify-content: space-between;
+}
+
+#tresc div div {
+	margin-top: 3vh;
+	width: 18vw;
+	height: 40vw;
+	background-color: 100;
+	float: left;
+}
+
+#stopka {
+	background: rgb(0, 0, 0, 0.1);
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	margin: 0.5rem 1rem;
+	gap: 1rem;
+}
+
+#stopka > * {
+	display: flex;
+	gap: 0.5rem;
+}
+
+#stopka a {
+	color: black;
+	padding: 0.5rem;
+	text-decoration: none;
+}
+
+#stopka a:hover {
+	color: rgb(0, 0, 0, 0.7);
+}
+
+#stopka a:hover svg {
+	fill: rgb(56, 159, 234);
+}
+
+.uwaga {
+	animation: uwaga 1000ms infinite;
+}
+
+body.uwaga {
+	animation: uwaga 100ms infinite;
+}
+
+@keyframes uwaga {
+	0% {
+		background-color: rgb(255, 0, 0);
+	}
+
+	33.3% {
+		background-color: rgb(0, 255, 0);
+	}
+
+	66.6% {
+		background-color: rgb(0, 0, 255);
+	}
+
+	100% {
+		background-color: rgb(255, 0, 0);
+	}
+}

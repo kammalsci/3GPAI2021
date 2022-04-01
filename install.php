@@ -37,18 +37,18 @@
                 if ($SQLUzytkownik=="") przenies('install.php?blad=wpiszUzytkownik');
                 if ($SQLHaslo=="") przenies('install.php?blad=wpiszHaslo');
                 if ($SQLBaza=="") przenies('install.php?blad=wpiszBaza');
-
+                
                 try {
                     $nazwaPolaczenia=mysqli_connect($SQLHost, $SQLUzytkownik, $SQLHaslo);
                     echo "Połączyło się!";
                 } catch (mysqli_sql_exception $exception) {
-                    header('Location: install.php?blad=bladPolaczenia');
+                    przenies('install.php?blad=bladPolaczenia');
                 }
                 try {
                     $zapytanie = 'CREATE DATABASE IF NOT EXISTS '.$SQLBaza;
                     mysqli_query($nazwaPolaczenia, $zapytanie);
                 } catch (mysqli_sql_exception $exception) {
-                    header('Location: install.php?blad=bladTworzeniaBazy');
+                    przenies('install.php?blad=bladTworzeniaBazy');
                 }
                 
             
@@ -56,7 +56,7 @@
                 try {
                     mysqli_select_db($nazwaPolaczenia, $SQLBaza);
                 } catch (mysqli_sql_exception $exception) {
-                    header('Location: install.php?blad=bladWybieraniaBazy');
+                    przenies('install.php?blad=bladWybieraniaBazy');
                 }
 
                 $zapytanie = "CREATE TABLE Uzytkownicy (
@@ -69,7 +69,7 @@
                 try {
                     mysqli_query($nazwaPolaczenia, $zapytanie);
                 } catch (mysqli_sql_exception $exception) {
-                    header('Location: install.php?blad=bladTworzeniaTabeli&tabela=Uzytkownicy');
+                    przenies('install.php?blad=bladTworzeniaTabeli&tabela=Uzytkownicy');
                 }
                 
             }
